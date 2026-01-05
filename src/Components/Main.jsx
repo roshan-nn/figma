@@ -20,9 +20,13 @@ const Main = () => {
 
 
   return (
-    <div className='bg-green-600'>
-      {data?.map(()=>(
-        <p></p>
+    <div className='h-screen bg-red-600'>
+      {data?.map((lists)=>(
+        <div className='bg-green-500'>
+        <p>{lists?.title}</p>
+        <img src={lists?.image}></img>
+        <p>{lists?.price}</p>
+        </div>
       )
     )}  
         

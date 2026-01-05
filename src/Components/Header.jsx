@@ -2,8 +2,8 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <div>
-        <ul className='flex p-4 space-x-8'>
+    <div className='h-10 bg-green-500'>
+        <ul className='flex p-4 space-x-8 '>
             <li>SHOP.CO</li>
             <li>Shop</li>
             <li>On Sale</li>
@@ -13,9 +13,14 @@ const Header = () => {
            
             </ul>
            
-            
+            <div className='w-10 photo'>
+              <img className='w-0.5' src={require("./images/Rectangle 6 (1).png")} alt="pic" />
+      
+    </div>
             
     </div>
+
+    
   )
 }
 
