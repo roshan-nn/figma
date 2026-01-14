@@ -31,7 +31,7 @@ setitemdetails(data)});
         <div key={itemdetails.id}>
             <img src={itemdetails?.image}></img>
             <h1>{itemdetails.title}</h1>
-            {/* <Link to="/cart"><button>Add to cart</button></Link> */}
+            <Link to="/cart"><button>Add to cart</button></Link>
 
         </div>
        
