@@ -1,10 +1,14 @@
 import React, {useEffect, useState} from "react";
-import { data, useParams,Link } from "react-router-dom";
-
+import { data, useParams,Link, useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 
 const Details = () => {
 const [itemdetails, setitemdetails]= useState("")
+const navigate = useNavigate();
+const [cartitem, setcartitem] = useState("")
+const [addbtn, setbtn] = useState("false")
+
 
 const { id } = useParams();
 // const url = process.env.REACT_APP_API_URL;
@@ -21,8 +25,30 @@ function itemDetails(){
 setitemdetails(data)});
 }
 
+useEffect(()=>{
+  if(addbtn){
+    carthandler()
+  }
+},[addbtn])
 
+const Added=()=>{
+  console.log("addbtn")
+  setbtn(true);
+}
+if(cartitem){
+  alert("added")
+  navigate("/")
+}
 
+const cart = { userId: 1, products: [{ id: {id} }] };
+
+function carthandler(){
+ 
+
+axios.post('https://fakestoreapi.com/carts', cart)
+  .then(response => {console.log(response.data)
+ setcartitem(response.data)});
+}
 
   return (
 
@@ -31,7 +57,7 @@ setitemdetails(data)});
         <div key={itemdetails.id}>
             <img src={itemdetails?.image}></img>
             <h1>{itemdetails.title}</h1>
-            <Link to="/cart"><button>Add to cart</button></Link>
+            <Link to="/cart"><button onClick={Added}>Add to cart</button></Link>
 
         </div>
        

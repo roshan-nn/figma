@@ -4,6 +4,7 @@ import Header from './Components/Header';
 import Main from './Components/Main';
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import Details from './Components/Pages/Details';
+import Cart from './Components/Pages/Cart';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
      <Routes>
       <Route path="/" element={<Main />}/>
       <Route path="/details/:id" element={<Details />}/>
-      
+      <Route path="/cart" element={<Cart />}/>
       
       </Routes>
       </BrowserRouter>
