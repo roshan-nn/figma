@@ -1,4 +1,5 @@
 import React, { useEffect, useState} from 'react'
+import { Link } from 'react-router-dom';
 
 const Main = () => {
 
@@ -20,16 +21,18 @@ const Main = () => {
 
 
   return (
-    <div className='h-screen bg-red-600'>
+    <div className='flex grid h-screen grid-cols-3 bg-red-600'>
       {data?.map((lists)=>(
-        <div className='bg-green-500'>
+        <div className='bg-green-500 card ' key={lists.id}>
         <p>{lists?.title}</p>
+        
         <img src={lists?.image}></img>
         <p>{lists?.price}</p>
+        { <Link to={`/details/${lists.id}`}>View button</Link>}
         </div>
       )
     )}  
-        
+         {/* <Link to={`/details/${items.id}`}>View Details</Link> */}
 
 
     </div>
