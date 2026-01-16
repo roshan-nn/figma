@@ -4,10 +4,11 @@ import axios from 'axios';
 
 
 const Details = () => {
+ 
 const [itemdetails, setitemdetails]= useState("")
 const navigate = useNavigate();
 const [cartitem, setcartitem] = useState("")
-const [addbtn, setbtn] = useState("false")
+const [addbtn, setbtn] = useState()
 
 
 const { id } = useParams();

@@ -1,6 +1,10 @@
 import React from 'react'
 
-const Header = () => {
+const Header = ({cartdata}) => {
+  console.log(cartdata, "cart");
+  
+  // const num= cartdata.length;
+  // console.log(num);
   return (
     <div className='h-10 bg-green-500'>
         <ul className='flex p-4 space-x-8 '>

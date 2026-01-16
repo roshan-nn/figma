@@ -1,7 +1,10 @@
 import React, { useEffect, useState} from 'react'
 import { Link } from 'react-router-dom';
+// import Details from '../Pages/Details';
 
-const Main = () => {
+const Main = ({Addincart}) => {
+  // const url=process.env.REACT_APP_API_URL;
+  // console.log(url, "link");
 
     const[data, setData] = useState([]);
     useEffect(()=>{
@@ -29,6 +32,7 @@ const Main = () => {
         <img src={lists?.image}></img>
         <p>{lists?.price}</p>
         { <Link to={`/details/${lists.id}`}>View button</Link>}
+        <button onClick={()=>Addincart(lists)}>Add in cart</button>
         </div>
       )
     )}  
